@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Akhil Jain — Family enterprise steward, Jain practitioner, endurance runner and institution builder. Speaker on purpose, legacy and long-horizon leadership."/>
+<meta property="og:title" content="Akhil Jain — Building for the generations after us"/>
+<meta property="og:url" content="https://www.akiduggar.com"/>
+<title>Akhil Jain — akiduggar.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+img{display:block;max-width:100%}
+:root{
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --ink:#1a1916;--ink-mid:#4a4845;--ink-soft:#8a8780;
+  --bg:#faf9f7;--bg-warm:#f4f1ec;--bg-card:#ffffff;
+  --line:rgba(26,25,22,0.1);--line-mid:rgba(26,25,22,0.18);
+  --gold:#9a7850;--gold-pale:#f0e8dc;
+}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 2.5rem;background:rgba(250,249,247,0.94);backdrop-filter:blur(8px);border-bottom:0.5px solid var(--line)}
+.nav-name{font-family:var(--serif);font-size:1.1rem;font-weight:400;letter-spacing:0.04em;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.55rem 1.25rem;border:0.5px solid var(--line-mid);background:transparent;color:var(--ink);cursor:pointer;transition:background 0.2s;text-decoration:none}
+.nav-cta:hover{background:var(--bg-warm)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:22px;height:0.5px;background:var(--ink);display:block}
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;align-items:center;padding:5rem 2.5rem 4rem;gap:4rem}
+.hero-tag{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.5rem}
+.hero-name{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:300;line-height:1.06;letter-spacing:-0.01em;margin-bottom:2rem}
+.hero-name em{font-style:italic;color:var(--gold)}
+.hero-why{font-family:var(--serif);font-size:1.15rem;font-weight:300;font-style:italic;color:var(--ink-mid);line-height:1.75;border-left:1.5px solid var(--gold);padding-left:1.5rem;margin-bottom:2.5rem}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{font-family:var(--sans);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.8rem 2rem;background:var(--ink);color:var(--bg);border:none;cursor:pointer;transition:opacity 0.2s;text-decoration:none;display:inline-block}
+.btn-primary:hover{opacity:0.78}
+.btn-secondary{font-family:var(--sans);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.8rem 2rem;background:transparent;color:var(--ink);border:0.5px solid var(--line-mid);cursor:pointer;transition:background 0.2s;text-decoration:none;display:inline-block}
+.btn-secondary:hover{background:var(--bg-warm)}
+.hero-photo-wrap{display:flex;align-items:flex-end;justify-content:center;position:relative}
+.hero-photo-frame{width:100%;max-width:420px;aspect-ratio:3/4;background:var(--bg-warm);border:0.5px solid var(--line);position:relative;overflow:hidden}
+.hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-photo-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;color:var(--ink-soft);padding:2rem;text-align:center}
+.hero-photo-placeholder svg{opacity:0.22}
+.hero-photo-placeholder p{font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;line-height:1.9}
+.hero-photo-badge{position:absolute;bottom:1.5rem;left:-1.5rem;background:var(--bg-card);border:0.5px solid var(--line);padding:1rem 1.25rem;max-width:200px}
+.hero-photo-badge p{font-family:var(--serif);font-size:0.9rem;font-style:italic;color:var(--ink-mid);line-height:1.5}
+.hero-photo-badge span{display:block;margin-top:0.4rem;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold)}
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);border-top:0.5px solid var(--line);border-bottom:0.5px solid var(--line)}
+.pillar{padding:2.5rem 2rem;border-right:0.5px solid var(--line);transition:background 0.2s}
+.pillar:last-child{border-right:none}
+.pillar:hover{background:var(--bg-warm)}
+.pillar-num{font-family:var(--serif);font-size:1.8rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.75rem}
+.pillar-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;margin-bottom:0.6rem}
+.pillar-desc{font-size:0.8rem;color:var(--ink-soft);line-height:1.7}
+/* SECTIONS */
+section{padding:5rem 2.5rem}
+.section-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:3rem}
+.divider{height:0.5px;background:var(--line);margin:0 2.5rem}
+/* ABOUT */
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:start}
+.about-text h2{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:300;line-height:1.25;margin-bottom:1.75rem}
+.about-text p{font-size:0.88rem;color:var(--ink-mid);line-height:1.9;margin-bottom:1rem}
+.facts-col{display:flex;flex-direction:column;gap:1.25rem}
+.fact-card{padding:1.5rem;background:var(--bg-warm);border-left:2px solid var(--gold)}
+.fact-card-label{font-size:0.63rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.5rem}
+.fact-card-text{font-family:var(--serif);font-size:1rem;font-weight:300;line-height:1.55;color:var(--ink)}
+/* PHOTOS */
+#photos{background:var(--bg-warm);padding:5rem 2.5rem}
+.photo-intro{max-width:480px;margin-bottom:3rem}
+.photo-intro h2{font-family:var(--serif);font-size:2rem;font-weight:300;margin-bottom:0.75rem}
+.photo-intro p{font-size:0.85rem;color:var(--ink-soft);line-height:1.8}
+.photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto;gap:1px;background:var(--line-mid)}
+.photo-cell{background:var(--bg-card);overflow:hidden;position:relative;cursor:pointer}
+.photo-cell:first-child{grid-row:span 2}
+.photo-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;display:block}
+.photo-cell:hover img{transform:scale(1.03)}
+.photo-cell-placeholder{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;background:var(--bg-warm);color:var(--ink-soft);padding:1.5rem;text-align:center}
+.photo-cell:first-child .photo-cell-placeholder{aspect-ratio:unset;min-height:380px}
+.photo-cell-placeholder svg{opacity:0.18}
+.photo-cell-placeholder p{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;line-height:1.8}
+.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:0.75rem 1rem;background:linear-gradient(transparent,rgba(26,25,22,0.55));color:#fff;font-size:0.72rem;letter-spacing:0.05em;opacity:0;transition:opacity 0.3s}
+.photo-cell:hover .photo-caption{opacity:1}
+.photo-add-note{margin-top:1.5rem;font-size:0.72rem;color:var(--ink-soft);font-style:italic}
+/* PRACTICE */
+#practice{background:var(--bg)}
+.practice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line)}
+.practice-card{background:var(--bg-card);padding:2.25rem 2rem;transition:background 0.2s}
+.practice-card:hover{background:var(--gold-pale)}
+.practice-icon{width:24px;height:24px;margin-bottom:1.25rem;color:var(--gold)}
+.practice-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:400;margin-bottom:0.5rem}
+.practice-card p{font-size:0.8rem;color:var(--ink-soft);line-height:1.75}
+/* SPEAKING */
+#speaking{background:var(--bg-warm)}
+.speak-inner{max-width:720px}
+.speak-inner h2{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;font-style:italic;line-height:1.2;margin-bottom:1.5rem}
+.speak-inner p{font-size:0.88rem;color:var(--ink-mid);line-height:1.9;margin-bottom:2rem}
+.topics{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem}
+.topic{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.45rem 1rem;border:0.5px solid var(--line-mid);color:var(--ink-mid);transition:all 0.2s;cursor:default}
+.topic:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* JOURNEY */
+#journey{background:var(--bg)}
+.timeline{display:flex;flex-direction:column;max-width:760px}
+.tl-item{display:grid;grid-template-columns:90px 1fr;gap:2rem;padding:1.4rem 0;border-bottom:0.5px solid var(--line);align-items:baseline}
+.tl-year{font-family:var(--serif);font-size:0.85rem;color:var(--gold);font-weight:400}
+.tl-content h4{font-size:0.88rem;font-weight:500;margin-bottom:0.25rem}
+.tl-content p{font-size:0.8rem;color:var(--ink-soft);line-height:1.7}
+/* WRITING */
+#writing{background:var(--bg-warm)}
+.writing-tabs{display:flex;gap:0;border-bottom:0.5px solid var(--line);margin-bottom:2.5rem}
+.tab-btn{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1.25rem;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;color:var(--ink-soft);transition:all 0.2s;margin-bottom:-0.5px}
+.tab-btn.active{color:var(--ink);border-bottom-color:var(--gold)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+.article-card{background:var(--bg-card);border:0.5px solid var(--line);padding:1.75rem;transition:border-color 0.2s}
+.article-card:hover{border-color:var(--gold)}
+.article-card a{text-decoration:none;color:inherit}
+.article-tag{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:0.75rem}
+.article-card h3{font-family:var(--serif);font-size:1.15rem;font-weight:400;line-height:1.4;margin-bottom:0.6rem}
+.article-card p{font-size:0.78rem;color:var(--ink-soft);line-height:1.7;margin-bottom:1rem}
+.article-meta{font-size:0.7rem;color:var(--ink-soft)}
+.carousel-wrap{overflow:hidden}
+.carousel-track{display:flex;gap:1.25rem;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94)}
+.carousel-card{flex:0 0 280px;background:var(--bg-card);border:0.5px solid var(--line);padding:1.5rem}
+.carousel-card .platform{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem}
+.carousel-card p{font-size:0.82rem;color:var(--ink-mid);line-height:1.75;margin-bottom:1rem}
+.carousel-card .card-date{font-size:0.7rem;color:var(--ink-soft)}
+.carousel-controls{display:flex;gap:0.5rem;margin-top:1.5rem}
+.carousel-btn{width:36px;height:36px;border:0.5px solid var(--line-mid);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.carousel-btn:hover{background:var(--bg-card)}
+.carousel-btn svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:1.5}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.video-card{background:var(--bg-card);border:0.5px solid var(--line);overflow:hidden}
+.video-thumb{width:100%;aspect-ratio:16/9;background:var(--bg-warm);display:flex;align-items:center;justify-content:center}
+.play-btn{width:44px;height:44px;border:1.5px solid rgba(26,25,22,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center}
+.play-btn svg{width:14px;height:14px;fill:var(--ink-mid);margin-left:2px}
+.video-info{padding:1.25rem}
+.video-info h4{font-family:var(--serif);font-size:1rem;font-weight:400;margin-bottom:0.3rem}
+.video-info p{font-size:0.75rem;color:var(--ink-soft)}
+.content-placeholder{border:0.5px dashed var(--line-mid);padding:3rem 2rem;text-align:center;color:var(--ink-soft);font-size:0.82rem;line-height:1.8}
+.content-placeholder strong{color:var(--gold);font-weight:500;display:block;margin-bottom:0.5rem;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase}
+/* CONTACT */
+#contact{background:var(--bg);border-top:0.5px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.contact-left h2{font-family:var(--serif);font-size:2.2rem;font-weight:300;margin-bottom:1rem}
+.contact-left p{font-size:0.86rem;color:var(--ink-mid);line-height:1.9;margin-bottom:2rem}
+.social-links{display:flex;flex-direction:column}
+.social-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--ink-mid);font-size:0.84rem;padding:0.9rem 0;border-bottom:0.5px solid var(--line);transition:color 0.2s}
+.social-link:first-child{border-top:0.5px solid var(--line)}
+.social-link:hover{color:var(--ink)}
+.social-link:hover .s-icon{opacity:1}
+.s-icon{width:20px;height:20px;flex-shrink:0;opacity:0.5;transition:opacity 0.2s}
+.s-handle{font-size:0.82rem}
+.s-label-text{font-size:0.63rem;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase;margin-left:auto}
+.contact-form{display:flex;flex-direction:column}
+.form-field{display:flex;flex-direction:column;border-bottom:0.5px solid var(--line)}
+.form-field label{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);padding:1.25rem 0 0.3rem}
+.form-field input,.form-field textarea,.form-field select{font-family:var(--sans);font-size:0.88rem;color:var(--ink);background:transparent;border:none;outline:none;padding:0.3rem 0 1rem;resize:none}
+.form-field textarea{min-height:80px}
+.form-submit{margin-top:1.75rem}
+/* FOOTER */
+footer{padding:2rem 2.5rem;border-top:0.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer p{font-size:0.72rem;color:var(--ink-soft);letter-spacing:0.04em}
+footer a{color:var(--gold);text-decoration:none}
+.footer-icons{display:flex;gap:1.25rem;align-items:center}
+.footer-icons a{color:var(--ink-soft);transition:color 0.2s}
+.footer-icons a:hover{color:var(--gold)}
+/* MOBILE */
+@media(max-width:900px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  nav.open .nav-links{display:flex;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:var(--bg);border-bottom:0.5px solid var(--line);padding:1.5rem;gap:1.25rem}
+  .hero{grid-template-columns:1fr;padding:3rem 1.5rem;gap:2.5rem;min-height:auto}
+  .hero-photo-wrap{order:-1}
+  .hero-photo-frame{max-width:100%;aspect-ratio:4/3}
+  .hero-photo-badge{left:0.5rem}
+  section{padding:3.5rem 1.5rem}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
+  .photo-grid{grid-template-columns:1fr 1fr}
+  .photo-cell:first-child{grid-column:span 2;grid-row:span 1}
+  footer{padding:1.5rem}
+  .divider{margin:0 1.5rem}
+}
+@media(max-width:480px){
+  .pillars{grid-template-columns:1fr}
+  .pillar{border-right:none;border-bottom:0.5px solid var(--line)}
+  .hero-name{font-size:2.5rem}
+  .photo-grid{grid-template-columns:1fr}
+  .photo-cell:first-child{grid-column:span 1}
+}
+</style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <a class="nav-name" href="#">Akhil Jain</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#photos">Moments</a></li>
+    <li><a href="#practice">Practice</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#writing">Writing &amp; Media</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Invite to speak</a>
+  <button class="hamburger" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-tag">Family enterprise · Jain practice · Institution building</div>
+    <h1 class="hero-name">Building for the<br><em>generations after us.</em></h1>
+    <p class="hero-why">"To nurture people and build enduring institutions so that future generations inherit opportunities greater than those we received."</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="#speaking">Invite to speak</a>
+      <a class="btn-secondary" href="#about">About Akhil</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-frame">
+      <!--
+        ADD YOUR PHOTO:
+        Save your photo as "akhil.jpg" in the same folder as this file,
+        then replace the div below with: <img src="akhil.jpg" alt="Akhil Jain" />
+      -->
+      <div class="hero-photo-placeholder">
+        <svg width="52" height="52" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="0.75">
+          <circle cx="26" cy="18" r="11"/><path d="M6 48c0-11 9-18 20-18s20 7 20 18"/>
+        </svg>
+        <p>Add your photo here<br/>Save as "akhil.jpg"<br/>in the same folder</p>
+      </div>
+    </div>
+    <div class="hero-photo-badge">
+      <p>Gurugram, India</p>
+      <span>CEO · Board transition</span>
+    </div>
+  </div>
+</section>
+
+<div class="pillars">
+  <div class="pillar"><div class="pillar-num">01</div><div class="pillar-title">Family Enterprise</div><p class="pillar-desc">Two decades navigating a multi-generational apparel company from operator to steward</p></div>
+  <div class="pillar"><div class="pillar-num">02</div><div class="pillar-title">Mentor &amp; Builder</div><p class="pillar-desc">Growing people, systems and institutions with a long-horizon lens</p></div>
+  <div class="pillar"><div class="pillar-num">03</div><div class="pillar-title">Jain Practitioner</div><p class="pillar-desc">Daily Samayik, Sudarshan Kriya, Vipassana — inner practice as leadership foundation</p></div>
+  <div class="pillar"><div class="pillar-num">04</div><div class="pillar-title">Endurance Athlete</div><p class="pillar-desc">Ultra marathons, trail runs — training the mind to hold long distances</p></div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Leadership shaped by a journal started in 1999.</h2>
+      <p>Akhil Jain has spent over two decades inside the real, unglamorous machinery of a family enterprise — navigating operations, governance tensions, and generational transitions in India's apparel industry. He led sales and marketing for Madame, a fashion brand with 150+ stores nationally and international presence, built a team from scratch, launched a Family Business Board and guided his family through a formal constitution process with Deloitte.</p>
+      <p>The work has not been smooth. He has written resignation letters he didn't send, started over after cash-flow crises, and learned — slowly — that the gap between vision and execution in a family business requires patience far more than strategy. That honesty is the core of what he brings to a room.</p>
+      <p>His Jain roots run deep. He attempted his first Samayik in 2004 on a Sunday morning after an overnight factory shift. The practice has continued since, alongside 15+ years of Art of Living, a 10-day Vipassana in Leh (2025), and an endurance running habit that began with a half marathon in 2018 and has extended to 50K trail events and the Athens Authentic Marathon (2024).</p>
+      <p>He is now deliberately transitioning from executive operator to board steward — building conditions for the next generation to lead with confidence.</p>
+    </div>
+    <div class="facts-col">
+      <div class="fact-card">
+        <div class="fact-card-label">WHY — Simon Sinek framework, 2025</div>
+        <div class="fact-card-text">"To nurture people and build enduring institutions so that future generations inherit opportunities greater than those we received."</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-card-label">Samayik practice</div>
+        <div class="fact-card-text">Daily 48-minute Jain practice of equanimity. First completed in 2004. Formal commitment through 2042 — scaling from one to five sessions daily by age 60.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-card-label">Running milestones</div>
+        <div class="fact-card-text">Half marathon 2018. Full marathon 2019. Ultra 50K trail, 2022. Athens Authentic Marathon, 2024. Training for triathlon.</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-card-label">Spiritual practice lineage</div>
+        <div class="fact-card-text">Art of Living since 2009 — Part 1, AMP, DSN, Sahaj Samadhi, Chakra Kriya. Vipassana, Dhamma Laddha Leh, 2025.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos">
+  <div class="section-label">Moments</div>
+  <div class="photo-intro">
+    <h2>A life built on long distances.</h2>
+    <p>Retreats, trails, family, forums — and the everyday practice of building something worth passing on.</p>
+  </div>
+  <div class="photo-grid">
+    <!--
+      TO ADD PHOTOS — for each cell, replace the placeholder div with:
+        <img src="photo-name.jpg" alt="Description" />
+        <div class="photo-caption">Caption text</div>
+
+      Save all images in the same folder as this HTML file.
+
+      Suggested photos:
+      Cell 1 (large/tall): Professional portrait or keynote/panel moment
+      Cell 2: Retreat, ashram or Vipassana
+      Cell 3: Running / trail race
+      Cell 4: Family or enterprise context
+      Cell 5: Pilgrimage / travel
+    -->
+    <div class="photo-cell">
+      <div class="photo-cell-placeholder">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.75"><rect x="2" y="6" width="36" height="28" rx="2"/><circle cx="20" cy="20" r="8"/><circle cx="32" cy="11" r="2"/></svg>
+        <p>Portrait or<br/>speaking photo<br/>(portrait orientation)</p>
+      </div>
+    </div>
+    <div class="photo-cell"><div class="photo-cell-placeholder"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.75"><rect x="2" y="6" width="36" height="28" rx="2"/><circle cx="20" cy="20" r="8"/></svg><p>Retreat /<br/>Vipassana</p></div></div>
+    <div class="photo-cell"><div class="photo-cell-placeholder"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.75"><rect x="2" y="6" width="36" height="28" rx="2"/><circle cx="20" cy="20" r="8"/></svg><p>Running /<br/>trail race</p></div></div>
+    <div class="photo-cell"><div class="photo-cell-placeholder"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.75"><rect x="2" y="6" width="36" height="28" rx="2"/><circle cx="20" cy="20" r="8"/></svg><p>Family /<br/>enterprise</p></div></div>
+    <div class="photo-cell"><div class="photo-cell-placeholder"><svg width="30" height="30" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="0.75"><rect x="2" y="6" width="36" height="28" rx="2"/><circle cx="20" cy="20" r="8"/></svg><p>Pilgrimage /<br/>travel</p></div></div>
+  </div>
+  <p class="photo-add-note">* To add photos: save image files to the same folder as this HTML file, then replace each placeholder div with &lt;img src="filename.jpg" alt="description" /&gt;</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRACTICE -->
+<section id="practice">
+  <div class="section-label">Inner practice</div>
+  <div class="practice-grid">
+    <div class="practice-card">
+      <svg class="practice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="7"/><line x1="12" y1="17" x2="12" y2="22"/></svg>
+      <h3>Jain Samayik</h3>
+      <p>Daily 48-minute practice of equanimity. First attempted in 2004 on a Sunday morning after an overnight factory shift. Formally committed since 2022, scaling from one to five daily sessions by age 60 in 2042. Each session is a laboratory for noticing how rarely we are truly still.</p>
+    </div>
+    <div class="practice-card">
+      <svg class="practice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"><path d="M3 16 Q12 3 21 16"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="7" y1="21" x2="17" y2="21"/></svg>
+      <h3>Sudarshan Kriya</h3>
+      <p>Breath-based practice from Art of Living, maintained since 2009 — Part 1 (three times across Ludhiana), AMP, DSN, Sahaj Samadhi, Chakra Kriya. Rishikesh and Bangalore ashrams. Done once or twice weekly; consistently renewed after each retreat.</p>
+    </div>
+    <div class="practice-card">
+      <svg class="practice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"><rect x="3" y="3" width="18" height="18"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="10" x2="12" y2="21"/></svg>
+      <h3>Vipassana</h3>
+      <p>10-day silent retreat at Dhamma Laddha, Leh — April 2025. 10.5 hours of daily practice in near-zero temperatures, taught by 82-year-old Acharya Sh. Pramod K. Bhave. The first three days replayed the CEO transition in the subconscious; by day nine, clarity arrived without effort.</p>
+    </div>
+    <div class="practice-card">
+      <svg class="practice-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      <h3>Endurance running</h3>
+      <p>First half marathon: 2018. First ultra: 50K trail, Mukteshwar 2022. Athens Authentic Marathon, 2024. Running without music leads to automatic introspection — the same insight a monk once shared about walking between destinations. The miles are a practice in themselves.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPEAKING -->
+<section id="speaking">
+  <div class="speak-inner">
+    <div class="section-label">Speaking &amp; panels</div>
+    <h2>The conversations worth having<br>in a room that's ready for them.</h2>
+    <p>Akhil speaks from lived experience at the intersection of family enterprise governance, Jain spiritual practice, and purposeful leadership. He has spoken at IIM-A growth accelerator programmes, JITO Mahakumbh, Economic Times forums, and LPU. He does not lecture from a safe distance — he thinks with a room. Available for panels, leadership retreats, family business conclaves, and college forums — on a paid or gratitude basis.</p>
+    <div class="topics">
+      <div class="topic">Finding your WHY</div>
+      <div class="topic">Family enterprise governance</div>
+      <div class="topic">Spiritual practice &amp; leadership</div>
+      <div class="topic">Stewardship vs ownership</div>
+      <div class="topic">CEO to Board transitions</div>
+      <div class="topic">Multi-generational institutions</div>
+      <div class="topic">Inner work as strategy</div>
+      <div class="topic">Legacy &amp; long-horizon thinking</div>
+      <div class="topic">Running as a leadership metaphor</div>
+      <div class="topic">Family charter &amp; governance</div>
+    </div>
+    <a class="btn-primary" href="#contact">Invite Akhil to speak</a>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-label">Journey</div>
+  <div class="timeline">
+    <div class="tl-item"><div class="tl-year">1999</div><div class="tl-content"><h4>Begins writing his autobiography</h4><p>A journal that has run continuously since age 17, tracking business, family, friendship, and the slow evolution of a worldview. This website is partly drawn from it.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2001–02</div><div class="tl-content"><h4>Joins the family enterprise</h4><p>Joins Jain Amar Clothing after studying at NIFT Delhi. Starts with no desk and no clear role. Launches MYG, the men's line — his first independent unit — and carves a path from scratch.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2004</div><div class="tl-content"><h4>First Samayik</h4><p>Completes his first 48-minute Jain Samayik on a Sunday morning after an overnight factory shift — a moment he had been circling all year. The practice, once started, does not stop.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2007</div><div class="tl-content"><h4>Marriage to Sumedha</h4><p>Meets and marries Sumedha in January — a partnership he describes as his most reliable anchor. She later becomes the company's head of marketing and e-commerce.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2009–24</div><div class="tl-content"><h4>Art of Living — deepening practice</h4><p>15 years of continuous programmes: Part 1 (three times), AMP, DSN, Sahaj Samadhi, Yoga Level 1, Chakra Kriya. Sudarshan Kriya becomes a weekly practice that outlasts every disruption.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2017</div><div class="tl-content"><h4>Shift to Gurugram</h4><p>Moves family to Gurugram and builds a proper corporate office. The distance from Ludhiana creates friction — and eventually clarity about what kind of leader he wants to be.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2018–22</div><div class="tl-content"><h4>Running as practice</h4><p>First half marathon (Dec 2018) after a high cholesterol reading. Full marathon 2019. Ultra marathon debut — 50K trail, Mukteshwar 2022. Ranked 7th. The discipline of endurance sport reshapes his relationship with patience and process.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2021–24</div><div class="tl-content"><h4>Family charter &amp; governance</h4><p>Initiates and leads a multi-year process with Deloitte to create a Family Business Board and formal family constitution for Jain Amar — covering decision rights, succession, and shared values across three generations.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2024</div><div class="tl-content"><h4>Athens Marathon &amp; Find Your WHY</h4><p>Runs the Athens Authentic Marathon in November. Completes Simon Sinek's Find Your Why process — crystallising a purpose that had been taking shape across twenty-five years of journal writing.</p></div></div>
+    <div class="tl-item"><div class="tl-year">2025</div><div class="tl-content"><h4>Vipassana, Leh &amp; elevation to CEO</h4><p>10-day silent retreat at Dhamma Laddha, Leh in April. Formally elevated to CEO of Jain Amar Clothing. The deepening of inner practice alongside the assumption of highest executive responsibility is, for him, the point.</p></div></div>
+    <div class="tl-item"><div class="tl-year">Now</div><div class="tl-content"><h4>CEO → Board</h4><p>Deliberately building the transition from executive operator to board steward. The goal: create conditions for the next generation to lead — and to have something worth saying publicly about what that actually requires.</p></div></div>
+  </div>
+</section>
+
+<!-- WRITING & MEDIA -->
+<section id="writing">
+  <div class="section-label">Writing &amp; media</div>
+  <h2 style="font-family:var(--serif);font-size:2rem;font-weight:300;margin-bottom:2.5rem">Ideas worth sharing.</h2>
+  <div class="writing-tabs">
+    <button class="tab-btn active" onclick="switchTab(event,'essays')">Essays</button>
+    <button class="tab-btn" onclick="switchTab(event,'media')">Media &amp; Articles</button>
+    <button class="tab-btn" onclick="switchTab(event,'social')">Updates</button>
+    <button class="tab-btn" onclick="switchTab(event,'videos')">Videos</button>
+  </div>
+  <div class="tab-panel active" id="tab-essays">
+    <div class="content-placeholder">
+      <strong>Essays — coming this week</strong>
+      The first pieces are being prepared. Topics will include purpose, family stewardship, and the intersection of inner practice with long-horizon leadership.
+    </div>
+    <!-- TO ADD: replace placeholder with .articles-grid containing .article-card elements -->
+  </div>
+  <div class="tab-panel" id="tab-media">
+    <div class="content-placeholder">
+      <strong>Media appearances &amp; press</strong>
+      Articles, interviews and features will be linked here as published. Each links directly to the original source.
+    </div>
+    <!-- TO ADD: replace placeholder with .articles-grid containing .article-card elements with <a href="url"> wrapping -->
+  </div>
+  <div class="tab-panel" id="tab-social">
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-card"><div class="platform">LinkedIn</div><p>The most important governance question in a family enterprise is not "who decides?" but "who is this decision for?" The answer changes everything.</p><div class="card-date">Add your post date</div></div>
+        <div class="carousel-card"><div class="platform">Instagram</div><p>Day 10 of Vipassana. Emerged with fewer certainties and more clarity. Sometimes those are the same thing.</p><div class="card-date">Add your post date</div></div>
+        <div class="carousel-card"><div class="platform">X</div><p>Samayik is not a ritual of stillness. It is a practice of noticing how rarely we are still — and slowly, over years, changing that ratio.</p><div class="card-date">Add your post date</div></div>
+        <div class="carousel-card"><div class="platform">LinkedIn</div><p>The difference between an owner and a steward: one asks "what can I take from this?" The other asks "what will I leave behind?"</p><div class="card-date">Add your post date</div></div>
+        <div class="carousel-card"><div class="platform">Instagram</div><p>Running teaches you something governance doesn't: you cannot fake endurance. You either put in the miles or you don't finish.</p><div class="card-date">Add your post date</div></div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn" onclick="moveCarousel(-1)"><svg viewBox="0 0 14 14"><polyline points="9,2 4,7 9,12"/></svg></button>
+      <button class="carousel-btn" onclick="moveCarousel(1)"><svg viewBox="0 0 14 14"><polyline points="5,2 10,7 5,12"/></svg></button>
+    </div>
+    <p style="font-size:0.72rem;color:var(--ink-soft);margin-top:1rem;font-style:italic">* Replace sample cards with your actual posts. Each card takes a platform label, text, and date.</p>
+  </div>
+  <div class="tab-panel" id="tab-videos">
+    <div class="video-grid">
+      <div class="video-card"><div class="video-thumb"><div class="play-btn"><svg viewBox="0 0 14 14"><polygon points="3,2 12,7 3,12" fill="currentColor"/></svg></div></div><div class="video-info"><h4>Add your first video</h4><p>Panel talk, keynote or interview. Replace with a YouTube embed or thumbnail.</p></div></div>
+      <div class="video-card"><div class="video-thumb"><div class="play-btn"><svg viewBox="0 0 14 14"><polygon points="3,2 12,7 3,12" fill="currentColor"/></svg></div></div><div class="video-info"><h4>Second video slot</h4><p>Replace with real video once available.</p></div></div>
+    </div>
+    <!-- YouTube embed: <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <div class="section-label">Connect</div>
+      <h2>Let's think together.</h2>
+      <p>Whether you're curating a panel, running a leadership programme, or want to exchange ideas — reach out. Akhil is open to conversations that matter, on a paid or gratitude basis.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.akiduggar.com" target="_blank">
+          <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="s-handle">akiduggar.com</span><span class="s-label-text">Web</span>
+        </a>
+        <a class="social-link" href="https://instagram.com/akiduggar" target="_blank">
+          <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span class="s-handle">@akiduggar</span><span class="s-label-text">Instagram</span>
+        </a>
+        <a class="social-link" href="https://linkedin.com/in/akhilduggarjain" target="_blank">
+          <svg class="s-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span class="s-handle">akhilduggarjain</span><span class="s-label-text">LinkedIn</span>
+        </a>
+        <a class="social-link" href="https://x.com/akiduggar" target="_blank">
+          <svg class="s-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <span class="s-handle">@akiduggar</span><span class="s-label-text">X</span>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="margin-bottom:1.5rem">Send a message</div>
+      <!--
+        FOR DIRECT EMAIL DELIVERY (recommended):
+        1. Go to formspree.io — free account
+        2. Create a form, get your ID (e.g. "xyzabc12")
+        3. Change action="mailto:..." to action="https://formspree.io/f/YOUR_ID"
+        4. Change method="get" to method="POST"
+        5. Remove enctype="text/plain"
+        Messages will arrive directly at aki@akiduggar.com
+      -->
+      <form class="contact-form" action="mailto:aki@akiduggar.com" method="get" enctype="text/plain">
+        <div class="form-field"><label for="fname">Your name</label><input type="text" id="fname" name="name" placeholder="Full name" required/></div>
+        <div class="form-field"><label for="femail">Email address</label><input type="email" id="femail" name="email" placeholder="your@email.com" required/></div>
+        <div class="form-field"><label for="forg">Organisation &amp; context</label><input type="text" id="forg" name="organisation" placeholder="Where are you writing from?"/></div>
+        <div class="form-field">
+          <label for="ftype">Type of enquiry</label>
+          <select id="ftype" name="type" style="font-family:var(--sans);font-size:0.88rem;color:var(--ink);background:transparent;border:none;outline:none;padding:0.3rem 0 1rem;cursor:pointer;">
+            <option value="">Select one</option>
+            <option>Speaking / panel invitation</option>
+            <option>College / forum event</option>
+            <option>Mentoring conversation</option>
+            <option>Media / press enquiry</option>
+            <option>General conversation</option>
+          </select>
+        </div>
+        <div class="form-field"><label for="fmsg">Your message</label><textarea id="fmsg" name="message" placeholder="Tell me about the opportunity or what you'd like to discuss…"></textarea></div>
+        <div class="form-submit"><button type="submit" class="btn-primary">Send message</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Akhil Jain &nbsp;·&nbsp; <a href="https://www.akiduggar.com">akiduggar.com</a> &nbsp;·&nbsp; Gurugram, India</p>
+  <div class="footer-icons">
+    <a href="https://instagram.com/akiduggar" target="_blank" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+    <a href="https://linkedin.com/in/akhilduggarjain" target="_blank" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <a href="https://x.com/akiduggar" target="_blank" aria-label="X"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+  </div>
+</footer>
+
+<script>
+function switchTab(e,id){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById('tab-'+id).classList.add('active')}
+var ci=0;
+function moveCarousel(d){var t=document.getElementById('carouselTrack');var cards=t.querySelectorAll('.carousel-card');var w=cards[0].offsetWidth+20;var vis=Math.max(1,Math.floor(t.parentElement.offsetWidth/w));var max=Math.max(0,cards.length-vis);ci=Math.max(0,Math.min(ci+d,max));t.style.transform='translateX(-'+(ci*w)+'px)'}
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('mainNav').classList.remove('open')})});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}})},{threshold:0.08});
+document.querySelectorAll('section,.pillar,.practice-card,.article-card,.fact-card').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';obs.observe(el)});
+</script>
+</body>
+</html>
