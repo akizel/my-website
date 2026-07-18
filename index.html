@@ -469,31 +469,71 @@ footer a{color:var(--gold);text-decoration:none}
         Messages will arrive directly at aki@akiduggar.com
       -->
       <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-        <div class="form-field"><label for="fname">Your name</label><input type="hidden" name="access_key" value="c4a705f4-d1b7-4c0e-a686-3ae568bbd922">
-        <div class="form-field"><label for="femail">Email address</label><input type="checkbox" name="botcheck" style="display:none"><input type="hidden" name="subject" value="New Contact Form Submission">
-        <div class="form-field"><label for="forg">Organisation &amp; context</label><input type="text" id="forg" name="organisation" placeholder="Where are you writing from?"/></div>
-        <div class="form-field">
-          <label for="ftype">Type of enquiry</label>
-          <select id="ftype" name="type" style="font-family:var(--sans);font-size:0.88rem;color:var(--ink);background:transparent;border:none;outline:none;padding:0.3rem 0 1rem;cursor:pointer;">
+
+    <!-- Hidden Web3Forms fields -->
+    <input type="hidden" name="access_key" value="c4a705f4-d1b7-4c0e-a686-3ae568bbd922">
+    <input type="hidden" name="subject" value="New Contact Form Submission">
+    <input type="checkbox" name="botcheck" style="display:none">
+
+    <div class="form-field">
+        <label for="fname">Your name</label>
+        <input type="text" id="fname" name="name" placeholder="Full name" required>
+    </div>
+
+    <div class="form-field">
+        <label for="femail">Email address</label>
+        <input type="email" id="femail" name="email" placeholder="aki@akiduggar.com" required>
+    </div>
+
+    <div class="form-field">
+        <label for="forg">Organisation & context</label>
+        <input type="text" id="forg" name="organisation" placeholder="Where are you writing from?">
+    </div>
+
+    <div class="form-field">
+        <label for="ftype">Type of enquiry</label>
+
+        <select id="ftype" name="type">
             <option value="">Select one</option>
             <option>Speaking / panel invitation</option>
             <option>College / forum event</option>
             <option>Mentoring conversation</option>
             <option>Media / press enquiry</option>
             <option>General conversation</option>
-          </select>
+        </select>
+    </div>
+
+    <div class="form-field">
+        <label for="fmsg">Your message</label>
+
+        <textarea
+            id="fmsg"
+            name="message"
+            placeholder="Tell me about the opportunity..."
+            required></textarea>
+    </div>
+
+    <div class="form-submit">
+
+        <div class="h-captcha"
+             data-sitekey="c4e4179e-0188-412e-86f4-19221ff8dfd8">
         </div>
-        <div class="form-field"><label for="fmsg">Your message</label><textarea id="fmsg" name="message" placeholder="Tell me about the opportunity or what you'd like to discuss…"></textarea></div>
-        <div class="form-submit"><div class="h-captcha" data-sitekey="c4e4179e-0188-412e-86f4-19221ff8dfd8"></div>
-</div><button type="submit" id="submitBtn" class="btn-primary">Send message</button></div>
-          <p
-id="result"
-style="
-margin-top:20px;
-font-size:15px;
-color:#555;">
-</p>
-      </form>
+
+        <br>
+
+        <button
+            type="submit"
+            id="submitBtn"
+            class="btn-primary">
+            Send Message
+        </button>
+
+        <p id="result"
+           style="margin-top:20px;color:#555;"></p>
+
+    </div>
+
+</form>
     </div>
   </div>
 </section>
