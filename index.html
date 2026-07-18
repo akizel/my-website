@@ -481,15 +481,15 @@ footer a{color:var(--gold);text-decoration:none}
 
     <div class="form-field">
         <label for="femail">Email address</label>
-        <input type="email" id="email" name="email" placeholder="i.e. name@company.com" required>
+        <input type="email" id="email" name="email" placeholder="i.e. name@company.com" pattern=".+@.+\..+" required>
     </div>
 
     <div class="form-field">
         <label for="forg">Organisation & context</label>
-        <input type="text" id="forg" name="organisation" placeholder="Where are you writing from?" pattern=".+@.+\..+" required>
+        <input type="text" id="forg" name="organisation" placeholder="Where are you writing from?" required>
     </div>
 
-    <div class="form-field">
+    <div class="form-field" required>
         <label for="ftype">Type of enquiry</label>
 
         <select id="ftype" name="type" required>
