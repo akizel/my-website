@@ -486,20 +486,20 @@ footer a{color:var(--gold);text-decoration:none}
 
     <div class="form-field">
         <label for="forg">Organisation & context</label>
-        <input type="text" id="forg" name="organisation" placeholder="Where are you writing from?" required>
+        <input type="text" id="forg" name="organisation" placeholder="Where are you writing from?" pattern=".+@.+\..+" required>
     </div>
 
     <div class="form-field">
         <label for="ftype">Type of enquiry</label>
 
-        <select id="ftype" name="type">
+        <select id="ftype" name="type" required>
             <option value="">Select one</option>
             <option>Speaking / panel invitation</option>
             <option>College / forum event</option>
             <option>Mentoring conversation</option>
             <option>Media / press enquiry</option>
             <option>General conversation</option>
-        </select>
+        </select> 
     </div>
 
     <div class="form-field">
